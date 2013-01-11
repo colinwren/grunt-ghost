@@ -26,23 +26,34 @@ ghost: {
 I have included all the test command options listed in the [documentation]( http://casperjs.org/testing.html#casper-test-command) and some options of my own.
 ```javascript
 ghost: {
+
     files: ['tests/userSuite/*.js'],
+
+    //CasperJS test command options
     options: {
-        //CasperJS test command options
-        xunit: 'xunit/userSuite.xml',  // Exports results of test to a xUnit XML file
-        direct: true,                  // Outputs additional log messages
-        logLevel: 'info',              // Sets logging level, check out http://casperjs.org/logging.html
-        includes: [                    // Specifies files to be included for each test file
+        // Exports results of test to a xUnit XML file
+        xunit: 'xunit/userSuite.xml',
+        // Outputs additional log messages
+        direct: true,
+        // Sets logging level, check out http://casperjs.org/logging.html
+        logLevel: 'info',
+        // Specifies files to be included for each test file
+        includes: [
             'tests/config.js',
             'lib/jquery.min.js'
         ],
-        pre: ['tests/pre-test.js'],     // Adds tests from specified files before running the test suite
-        post: ['tests/post-test.js'],   // Adds tests from specified files after running the test suite
-        failFast: true,                 // Terminates test suite upon failure of first test
+        // Adds tests from specified files before running the test suite
+        pre: ['tests/pre-test.js'],
+        // Adds tests from specified files after running the test suite
+        post: ['tests/post-test.js'],
+        // Terminates test suite upon failure of first test
+        failFast: true,
         
         // grunt-ghost specific options
-        printCommand: true,   // Prints command sent to CasperJS
-        hideFilePaths: true  // Tells ghost to not print list of filepaths
+        // Prints command sent to CasperJS
+        printCommand: true,
+        // Tells ghost to not print list of filepaths
+        hideFilePaths: true
     }
 }
 ```
