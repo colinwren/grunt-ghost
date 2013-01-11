@@ -1,0 +1,41 @@
+{
+  "name": "grunt-ghost",
+  "description": "Grunt task to run CasperJS tests",
+  "version": "0.0.8",
+  "homepage": "https://github.com/colin/grunt-ghost",
+  "author": {
+    "name": "Colin Wren",
+    "email": "colin@cawren.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/colinwren/grunt-ghost.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colinwren/grunt-ghost/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/colinwren/grunt-ghost/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "tasks/ghost.js",
+  "bin": "bin/grunt-ghost",
+  "engines": {
+    "node": "~0.8.0"
+  },
+  "Dependencies": {
+    "grunt": "~0.3.17",
+    "grunt-contrib-lib": "<0.4.0"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "gruntplugin",
+    "casperjs",
+    "gruntjs",
+    "casper"
+
+  ]
+}
