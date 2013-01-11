@@ -19,15 +19,17 @@ grunt.loadNpmTasks('grunt-ghost');
 Add the filepaths of the tests you want to run in the "files" array. Files will be run in alphabetic and numerical order, below I have used a file naming convention that makes running files in correct order easier.
 ```javascript
 ghost: {
-  files: ['tests/1_userLogin.js','tests/2_userLogout']
+  dist: {
+    src: ['tests/1_userLogin.js','tests/2_userLogout']
+  }
 }
 ```
 #### Using options
 I have included all the test command options listed in the [documentation]( http://casperjs.org/testing.html#casper-test-command) and some options of my own.
 ```javascript
 ghost: {
-
-    files: ['tests/userSuite/*.js'],
+  dist: {
+    src: ['tests/userSuite/*.js'],
 
     //CasperJS test command options
     options: {
@@ -55,6 +57,7 @@ ghost: {
         // Tells ghost to not print list of filepaths
         hideFilePaths: true
     }
+  }
 }
 ```
 ## Attribution
