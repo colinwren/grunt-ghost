@@ -25,11 +25,9 @@
   "engines": {
     "node": "~0.8.0"
   },
-  "Dependencies": {
+  "dependencies": {
     "grunt": "~0.3.17",
-    "grunt-contrib-lib": "<0.4.0"
-  },
-  "devDependencies": {
+    "grunt-lib-contrib": "<0.4.0"
   },
   "keywords": [
     "gruntplugin",
