@@ -16,7 +16,7 @@ grunt.loadNpmTasks('grunt-ghost');
 
 ## Documentation
 ####Basic use without options
-Add the filepaths of the tests you want to run in the "files" array. Files will be run in alphabetic and numerical order, below I have used a file naming convention that makes running files in correct order easier.
+Add the filepaths of the tests you want to run in the "src" array. Files will be run in alphabetic and numerical order, below I have used a file naming convention that makes running files in correct order easier.
 ```javascript
 ghost: {
   dist: {

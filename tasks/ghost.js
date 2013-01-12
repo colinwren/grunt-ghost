@@ -43,10 +43,10 @@ module.exports = function (grunt) {
       command.push('--fail-fast');
     }
 
-    // Get filepaths from 'files' and sorts alphabetically
+    // Get filepaths from 'src' and sorts alphabetically
     var filepaths = grunt.file.expandFiles(this.file.src).sort();
 
-    // Get filepaths from 'files' array and add them to CasperJS parameter array
+    // Get filepaths from 'src' array and add them to CasperJS parameter array
     command = command.concat(grunt.file.expandFiles(this.file.src).sort());
  
     // Funciton to wrap grunt log output at 80 characters
