@@ -25,7 +25,7 @@ ghost: {
 }
 ```
 #### Using options
-I have included all the test command options listed in the [documentation]( http://casperjs.org/testing.html#casper-test-command) and some options of my own.
+I have included all the test command options listed in the [CasperJS documentation]( http://casperjs.org/testing.html#casper-test-command) and some options of my own.
 ```javascript
 ghost: {
   dist: {
