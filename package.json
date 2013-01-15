@@ -25,15 +25,11 @@
   "engines": {
     "node": "~0.8.0"
   },
-  "dependencies": {
-    "grunt": "~0.3.17",
-    "grunt-lib-contrib": "<0.4.0"
-  },
+  "dependencies": {},
   "keywords": [
     "gruntplugin",
     "casperjs",
     "gruntjs",
     "casper"
-
   ]
 }

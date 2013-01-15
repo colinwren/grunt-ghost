@@ -11,7 +11,7 @@ module.exports = function (grunt) {
   // Create MultiTask 'ghost'
   grunt.registerMultiTask('ghost', 'Runs CasperJS Tests.', function () {
     // Get options object
-    var options = require('grunt-contrib-lib').init(grunt).options(this),
+    var options = this.data.options,
         // Tells Grunt that this asynchronous and that it is finshed when
         // "done()" is called
         done = this.async(),
