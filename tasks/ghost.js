@@ -72,7 +72,7 @@ module.exports = function (grunt) {
           command.join(' ') + ' \n');
     }
     // Prints filepaths sent to CasperJS in alternating colors
-    if (!options.hideFilePaths) {
+    if (options.printFilePaths) {
       var files = '',
           colors = [
             '\u001b[34m', // Blue

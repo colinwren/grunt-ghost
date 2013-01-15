@@ -29,7 +29,7 @@ I have included all the test command options listed in the [CasperJS documentati
 ```javascript
 ghost: {
   dist: {
-    src: ['tests/userSuite/*.js'],
+    src: ['tests/userSuite/*'],
 
     //CasperJS test command options
     options: {
@@ -54,8 +54,8 @@ ghost: {
         // grunt-ghost specific options
         // Prints command sent to CasperJS
         printCommand: true,
-        // Tells ghost to not print list of filepaths
-        hideFilePaths: true
+        // Prints list of filepaths
+        prtinFilePaths: true
     }
   }
 }
