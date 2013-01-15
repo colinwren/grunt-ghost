@@ -3,16 +3,13 @@
 Grunt task to run [CasperJS](http://casperjs.org/) tests
 
 ## Getting Started
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-ghost`
+Install this grunt plugin with: `npm install grunt-ghost`
 
 Then add this line to your project's `grunt.js` gruntfile:
 
 ```javascript
 grunt.loadNpmTasks('grunt-ghost');
 ```
-
-[grunt]: http://gruntjs.com/
-[getting_started]: https://github.com/gruntjs/grunt/blob/master/docs/getting_started.md
 
 ## Documentation
 ####Basic use without options
@@ -31,7 +28,7 @@ ghost: {
   dist: {
     src: ['tests/userSuite/*'],
 
-    //CasperJS test command options
+    // CasperJS test command options
     options: {
         // Exports results of test to a xUnit XML file
         xunit: 'xunit/userSuite.xml',
@@ -55,7 +52,7 @@ ghost: {
         // Prints command sent to CasperJS
         printCommand: true,
         // Prints list of filepaths
-        prtinFilePaths: true
+        printFilePaths: true
     }
   }
 }
