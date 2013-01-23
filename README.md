@@ -20,6 +20,10 @@ ghost: {
     src: ['tests/1_userLogin.js','tests/2_userLogout']
   }
 }
+####Dependencies
+
+The only dependencies are [CasperJS](http://casperjs.org/) and
+[Grunt](http://gruntjs.com/)
 ```
 #### Using options
 I have included all the test command options listed in the [CasperJS documentation]( http://casperjs.org/testing.html#casper-test-command) and some options of my own.
@@ -65,5 +69,5 @@ Thanks to the [CasperJS](http://casperjs.org) authors for making a great tool, t
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
 
 ## License
-Copyright (c) 2013 Colin Wren  
+Copyright (c) 2013 Colin Wren
 Licensed under the MIT license.

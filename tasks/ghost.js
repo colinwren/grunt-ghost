@@ -12,7 +12,7 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('ghost', 'Runs CasperJS Tests.', function () {
     // Get options object
     var options = this.data.options,
-        // Tells Grunt that this asynchronous and that it is finshed when
+        // Tells Grunt that this asynchronous and that it is finished when
         // "done()" is called
         done = this.async(),
         // Get spawn function for the CasperJS process creation
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
     // Get filepaths from 'src' array and add them to CasperJS parameter array
     command = command.concat(grunt.file.expandFiles(this.file.src).sort());
  
-    // Funciton to wrap grunt log output at 80 characters
+    // Function to wrap grunt log output at 80 characters
     var lastSpace;
     function wrap(str) {
       // Will run until there are no spaces in the string (All arguments have
@@ -57,7 +57,7 @@ module.exports = function (grunt) {
       if (str.indexOf(' ') === -1) {
         return;
       }
-      // Finds last space in string before 80 characters
+      // Finds last space in the first 80 characters of the string
       lastSpace = str.substr(0, 80).lastIndexOf(' ');
       // Writes string until the last space into grunt log
       grunt.log.write(str.substr(0, lastSpace) + '\n');
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
       wrap(str.substr(lastSpace + 1));
     }
 
-    // Aditional Options
+    // Additional Options
     // Prints command sent to CasperJS
     if (options.printCommand) {
       wrap('\u001b[1m\u001b[4mCommand:\u001b[0m casperjs ' +
@@ -82,7 +82,7 @@ module.exports = function (grunt) {
             '\u001b[32m'  // Green
           ];
 
-      // Give file paths alternatiing colors and add them to 'files' string
+      // Give file paths alternating colors and add them to 'files' string
       for (var i = 0; i < filepaths.length; i++) {
         files += colors[i % colors.length] + filepaths[i] + ' ';
       }
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
     // Create CasperJS process
     var cspr = spawn('casperjs', command);
     cspr.stdout.setEncoding('utf8');
-    // On receiveing output from CasperJS, print it line by line
+    // On receiving output from CasperJS, print it line by line
     cspr.stdout.on('data', function (data) {
       var lines = data.toString().split(/(\e?\n)/g);
       for (var j = 0; j < lines.length; j++) {
@@ -101,7 +101,7 @@ module.exports = function (grunt) {
       }
     });
 
-    // Captures errors from casper and prints them
+    // Captures errors from CasperJS and prints them
     cspr.stderr.on('data', function (data) {
       grunt.log.error(data);
       done();
