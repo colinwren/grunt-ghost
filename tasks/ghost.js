@@ -18,7 +18,8 @@ module.exports = function (grunt) {
         // Get spawn function for the CasperJS process creation
         spawn = require('child_process').spawn,
         // Create array that will contain all the parameters for CasperJS
-        command = ['test'];
+        command = ['test'],
+        len;
 
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
@@ -42,12 +43,15 @@ module.exports = function (grunt) {
     if (options.failFast) {
       command.push('--fail-fast');
     }
+    if (options.args) {
+      command = command.concat(formatArgs(options.args));
+    }
 
     // Get filepaths from 'src' and sorts alphabetically
     var filepaths = grunt.file.expandFiles(this.file.src).sort();
 
-    // Get filepaths from 'src' array and add them to CasperJS parameter array
-    command = command.concat(grunt.file.expandFiles(this.file.src).sort());
+    // add CasperJS parameter array to filepath array
+    command = filepaths.concat(command);
  
     // Function to wrap grunt log output at 80 characters
     var lastSpace;
@@ -63,6 +67,32 @@ module.exports = function (grunt) {
       grunt.log.write(str.substr(0, lastSpace) + '\n');
       // Calls itself with the rest of the string that was no logged
       wrap(str.substr(lastSpace + 1));
+    }
+
+    // Checks if something is an array
+    function isArr (arr) {
+      return Object.prototype.toString.call(arr) === '[object Array]';
+    }
+
+    // Formats named or anonymous arguments
+    function formatArgs(params){
+      var len, 
+          rtn = [];
+      
+      if (isArr(options.args)) {
+        // Array of anonymous arguments
+        len = params.length;
+        for (var i = 0; i < len; i++) {
+          rtn.push(params[i]);
+        }
+      } else {
+        // Object containing named arguments
+        for (var p in params) {
+          rtn.push('--' + p + '=' + params[p]);
+        }
+      }
+
+      return rtn;
     }
 
     // Additional Options
