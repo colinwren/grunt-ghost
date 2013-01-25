@@ -18,7 +18,8 @@ module.exports = function (grunt) {
         // Get spawn function for the CasperJS process creation
         spawn = require('child_process').spawn,
         // Create array that will contain all the parameters for CasperJS
-        command = [];
+        command = [],
+        len;
 
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
@@ -43,7 +44,10 @@ module.exports = function (grunt) {
       command.push('--fail-fast');
     }
     if (options.args) {
-      command = command.concat(formatArgs(options.args));
+      len = options.args.length;
+      for (var i = 0; i < len; i++) {
+        command.push(options.args[i]);
+      }
     }
 
     // Get filepaths from 'src' and sorts alphabetically
@@ -66,32 +70,6 @@ module.exports = function (grunt) {
       grunt.log.write(str.substr(0, lastSpace) + '\n');
       // Calls itself with the rest of the string that was no logged
       wrap(str.substr(lastSpace + 1));
-    }
-
-    // Checks if something is an array
-    function isArr (arr) {
-      return Object.prototype.toString.call(arr) === '[object Array]';
-    }
-
-    // Formats named or anonymous arguments
-    function formatArgs(params){
-      var len, 
-          rtn = [];
-      
-      if (isArr(options.args)) {
-        // Array of anonymous arguments
-        len = params.length;
-        for (var i = 0; i < len; i++) {
-          rtn.push(params[i]);
-        }
-      } else {
-        // Object containing named arguments
-        for (var p in params) {
-          rtn.push('--' + p + '=' + params[p]);
-        }
-      }
-
-      return rtn;
     }
 
     // Additional Options
