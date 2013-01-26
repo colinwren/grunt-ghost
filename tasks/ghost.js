@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         spawn = require('child_process').spawn,
         // Create array that will contain all the parameters for CasperJS
         command = [],
-        len;
+        params;
 
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
@@ -43,10 +43,14 @@ module.exports = function (grunt) {
     if (options.failFast) {
       command.push('--fail-fast');
     }
-    if (options.args) {
-      len = options.args.length;
-      for (var i = 0; i < len; i++) {
-        command.push(options.args[i]);
+    if (options.params) {
+      params = options.params;
+      for (var p in params) {
+        if (p !== 'unNamed') {
+          command.push('--' + p + '=' + params[p]);
+        } else {
+          command = command.concat(params[p]);
+        }
       }
     }
 
