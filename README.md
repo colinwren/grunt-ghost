@@ -13,7 +13,7 @@ grunt.loadNpmTasks('grunt-ghost');
 
 ## Documentation
 ####Basic use without options
-Add the filepaths of the tests you want to run in the "src" array. Files will be run in alphabetic and numerical order, below I have used a file naming convention that makes running files in correct order easier.
+Specify the files/directories of the tests you want to run in the 'src' array. Files will be run in alphabetic and numerical order.
 ```javascript
 ghost: {
   dist: {
@@ -34,6 +34,12 @@ ghost: {
 
     // CasperJS test command options
     options: {
+        // Allows you to pass variables to casper that can be accesed in files,
+        // for example, if you used the following args object then
+        // casper.cli.get('username') would return 'colin'
+        args: {
+          username: 'colin'
+        },
         // Exports results of test to a xUnit XML file
         xunit: 'xunit/userSuite.xml',
         // Outputs additional log messages
@@ -51,9 +57,9 @@ ghost: {
         post: ['tests/post-test.js'],
         // Terminates test suite upon failure of first test
         failFast: true,
-        
+
         // grunt-ghost specific options
-        // Prints command sent to CasperJS
+        // Prints the command given to CasperJS
         printCommand: true,
         // Prints list of filepaths
         printFilePaths: true

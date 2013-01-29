@@ -48,10 +48,10 @@ module.exports = function (grunt) {
     if (options.failFast) {
       command.push('--fail-fast');
     }
-    if (options.params) {
-      var params = options.params;
-      for (var p in params) {
-        command.push('--' + p + '=' + params[p]);
+    if (options.args) {
+      var args = options.args;
+      for (var a in args) {
+        command.push('--' + a + '=' + args[a]);
       }
     }
 
