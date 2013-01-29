@@ -20,6 +20,12 @@ module.exports = function (grunt) {
         // Create array that will contain all the parameters for CasperJS
         command = ['test'];
 
+    // Get filepaths from 'src' and sorts alphabetically
+    var filepaths = grunt.file.expandFiles(this.file.src).sort();
+
+    // add CasperJS parameter array to filepath array
+    command.push(filepaths);
+
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
       command.push('--xunit=' + options.xunit);
@@ -42,13 +48,13 @@ module.exports = function (grunt) {
     if (options.failFast) {
       command.push('--fail-fast');
     }
+    if (options.params) {
+      var params = options.params;
+      for (var p in params) {
+        command.push('--' + p + '=' + params[p]);
+      }
+    }
 
-    // Get filepaths from 'src' and sorts alphabetically
-    var filepaths = grunt.file.expandFiles(this.file.src).sort();
-
-    // Get filepaths from 'src' array and add them to CasperJS parameter array
-    command = command.concat(grunt.file.expandFiles(this.file.src).sort());
- 
     // Function to wrap grunt log output at 80 characters
     var lastSpace;
     function wrap(str) {
