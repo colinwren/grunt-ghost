@@ -18,7 +18,13 @@ module.exports = function (grunt) {
         // Get spawn function for the CasperJS process creation
         spawn = require('child_process').spawn,
         // Create array that will contain all the parameters for CasperJS
-        command = [];
+        command = ['test'];
+
+    // Get filepaths from 'src' and sorts alphabetically
+    var filepaths = grunt.file.expandFiles(this.file.src).sort();
+
+    // add CasperJS parameter array to filepath array
+    command.push(filepaths);
 
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
@@ -45,20 +51,10 @@ module.exports = function (grunt) {
     if (options.params) {
       var params = options.params;
       for (var p in params) {
-        if (p !== 'unNamed') {
-          command.push('--' + p + '=' + params[p]);
-        } else {
-          command = command.concat(params[p]);
-        }
+        command.push('--' + p + '=' + params[p]);
       }
     }
 
-    // Get filepaths from 'src' and sorts alphabetically
-    var filepaths = grunt.file.expandFiles(this.file.src).sort();
-
-    // add CasperJS parameter array to filepath array
-    command = filepaths.concat(command);
- 
     // Function to wrap grunt log output at 80 characters
     var lastSpace;
     function wrap(str) {
