@@ -25,7 +25,7 @@ ghost: {
 
 The only dependencies are [CasperJS](http://casperjs.org/) and
 [Grunt](http://gruntjs.com/)
-```
+
 #### Using options
 I have included all the test command options listed in the [CasperJS documentation]( http://casperjs.org/testing.html#casper-test-command) and some options of my own.
 ```javascript
@@ -73,7 +73,7 @@ ghost: {
 Thanks to the [CasperJS](http://casperjs.org) authors for making a great tool, the descriptions of the test command options are modifications from their [documentation]( http://casperjs.org/testing.html#casper-test-command). I also want to thank the authors of [grunt-casperjs](https://github.com/ronaldlokers/grunt-casperjs) and [grunt-recess](https://github.com/sindresorhus/grunt-recess) because I learned a lot from looking at their source.
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using grunt.
 
 ## License
 Copyright (c) 2013 Colin Wren
