@@ -20,6 +20,7 @@ ghost: {
     src: ['tests/1_userLogin.js','tests/2_userLogout']
   }
 }
+```
 ####Dependencies
 
 The only dependencies are [CasperJS](http://casperjs.org/) and
