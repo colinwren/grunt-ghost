@@ -15,16 +15,12 @@ module.exports = function (grunt) {
         // Tells Grunt that this asynchronous and that it is finished when
         // "done()" is called
         done = this.async(),
-        // Get spawn function for the CasperJS process creation
-        spawn = require('child_process').spawn,
+        // Get filepaths from 'src' and sorts alphabetically
+        filepaths = grunt.file.expandFiles(this.file.src).sort(),
         // Create array that will contain all the parameters for CasperJS
-        command = ['test'];
-
-    // Get filepaths from 'src' and sorts alphabetically
-    var filepaths = grunt.file.expandFiles(this.file.src).sort();
-
-    // add CasperJS parameter array to filepath array
-    command.push(filepaths);
+        command = ['test'].concat(filepaths),
+        // Get spawn function for the CasperJS process creation
+        spawn = require('child_process').spawn;
 
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
@@ -77,6 +73,7 @@ module.exports = function (grunt) {
       wrap('\u001b[1m\u001b[4mCommand:\u001b[0m casperjs ' +
           command.join(' ') + ' \n');
     }
+
     // Prints filepaths sent to CasperJS in alternating colors
     if (options.printFilePaths) {
       var files = '',
@@ -87,7 +84,6 @@ module.exports = function (grunt) {
             '\u001b[35m', // Magenta
             '\u001b[32m'  // Green
           ];
-
       // Give file paths alternating colors and add them to 'files' string
       for (var i = 0; i < filepaths.length; i++) {
         files += colors[i % colors.length] + filepaths[i] + ' ';
