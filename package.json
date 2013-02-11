@@ -1,7 +1,7 @@
 {
   "name": "grunt-ghost",
   "description": "Grunt task to run CasperJS tests",
-  "version": "0.1.11",
+  "version": "1.0.0",
   "homepage": "https://github.com/colin/grunt-ghost",
   "author": {
     "name": "Colin Wren",
