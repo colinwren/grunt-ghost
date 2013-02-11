@@ -22,6 +22,11 @@ module.exports = function (grunt) {
         // Get spawn function for the CasperJS process creation
         spawn = require('child_process').spawn;
 
+    // If there are no options set options to an empty object
+    if (typeof options === 'undefined') {
+      options = {};
+    }
+
     // Get CasperJS test options and add them to command array
     if (options.xunit) {
       command.push('--xunit=' + options.xunit);
