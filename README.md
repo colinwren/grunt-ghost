@@ -5,7 +5,7 @@ Grunt task to run [CasperJS](http://casperjs.org/) tests
 ## Getting Started
 Install this grunt plugin with: `npm install grunt-ghost`
 
-Then add this line to your project's `grunt.js` gruntfile:
+Then add this line to your project's `Gruntfile.js` gruntfile:
 
 ```javascript
 grunt.loadNpmTasks('grunt-ghost');
@@ -17,7 +17,7 @@ Specify the files/directories of the tests you want to run in the 'src' array. F
 ```javascript
 ghost: {
   dist: {
-    src: ['tests/1_userLogin.js','tests/2_userLogout']
+    filesSrc: ['tests/1_userLogin.js','tests/2_userLogout']
   }
 }
 ```
@@ -31,7 +31,7 @@ I have included all the test command options listed in the [CasperJS documentati
 ```javascript
 ghost: {
   dist: {
-    src: ['tests/userSuite/*'],
+    filesSrc: ['tests/userSuite/*'],
 
     // CasperJS test command options
     options: {
@@ -58,7 +58,6 @@ ghost: {
         post: ['tests/post-test.js'],
         // Terminates test suite upon failure of first test
         failFast: true,
-
         // grunt-ghost specific options
         // Prints the command given to CasperJS
         printCommand: true,
