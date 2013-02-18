@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         // "done()" is called
         done = this.async(),
         // Get filepaths from 'src' and sorts alphabetically
-        filepaths = grunt.file.expandFiles(this.file.src).sort(),
+        filepaths = this.data.filesSrc.sort(),
         // Create array that will contain all the parameters for CasperJS
         command = ['test'].concat(filepaths),
         // Get spawn function for the CasperJS process creation
