@@ -35,34 +35,34 @@ ghost: {
 
     // CasperJS test command options
     options: {
-        // Allows you to pass variables to casper that can be accesed in files,
-        // for example, if you used the following args object then
-        // casper.cli.get('username') would return 'colin'
-        args: {
-          username: 'colin'
-        },
-        // Exports results of test to a xUnit XML file
-        xunit: 'xunit/userSuite.xml',
-        // Outputs additional log messages
-        direct: true,
-        // Sets logging level, check out http://casperjs.org/logging.html
-        logLevel: 'info',
-        // Specifies files to be included for each test file
-        includes: [
-            'tests/config.js',
-            'lib/jquery.min.js'
-        ],
-        // Adds tests from specified files before running the test suite
-        pre: ['tests/pre-test.js'],
-        // Adds tests from specified files after running the test suite
-        post: ['tests/post-test.js'],
-        // Terminates test suite upon failure of first test
-        failFast: true,
-        // grunt-ghost specific options
-        // Prints the command given to CasperJS
-        printCommand: true,
-        // Prints list of filepaths
-        printFilePaths: true
+      // Allows you to pass variables to casper that can be accesed in files,
+      // for example, if you used the following args object then
+      // casper.cli.get('username') would return 'colin'
+      args: {
+        username: 'colin'
+      },
+      // Exports results of test to a xUnit XML file
+      xunit: 'xunit/userSuite.xml',
+      // Outputs additional log messages
+      direct: true,
+      // Sets logging level, check out http://casperjs.org/logging.html
+      logLevel: 'info',
+      // Specifies files to be included for each test file
+      includes: [
+        'tests/config.js',
+        'lib/jquery.min.js'
+      ],
+      // Adds tests from specified files before running the test suite
+      pre: ['tests/pre-test.js'],
+      // Adds tests from specified files after running the test suite
+      post: ['tests/post-test.js'],
+      // Terminates test suite upon failure of first test
+      failFast: true,
+      // grunt-ghost specific options
+      // Prints the command given to CasperJS
+      printCommand: true,
+      // Prints list of filepaths
+      printFilePaths: true
     }
   }
 }
