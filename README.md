@@ -1,9 +1,12 @@
 # grunt-ghost
 
-Grunt task to run [CasperJS](http://casperjs.org/) tests
+[Grunt](http://gruntjs.com/) task to run [CasperJS](http://casperjs.org/) tests.
 
 ## Getting Started
-Install this grunt plugin with: `npm install grunt-ghost`
+If you haven't used grunt before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a gruntfile as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
+```shell
+npm install grunt-ghost --save-dev
+```
 
 Then add this line to your project's `Gruntfile.js` gruntfile:
 
@@ -13,7 +16,7 @@ grunt.loadNpmTasks('grunt-ghost');
 
 ## Documentation
 ####Basic use without options
-Specify the files/directories of the tests you want to run in the 'src' array. Files will be run in alphabetic and numerical order.
+Specify the files/directories of the tests you want to run in the `filesSrc` array. Files will be run in alphabetic and numerical order.
 ```javascript
 ghost: {
   dist: {
