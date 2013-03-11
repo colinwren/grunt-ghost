@@ -1,12 +1,14 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    lint: {
-      files: ['tasks/ghost.js']
+    ghost: {
+      dist: {
+        filesSrc: ['test/googleTest.js']
+      }
     },
     jshint: {
+      all: ['tasks/ghost.js'],
       options: {
-        curly: true,
         eqeqeq: true,
         immed: true,
         indent: 2,
@@ -21,20 +23,16 @@ module.exports = function(grunt) {
         unused: true,
         boss: true,
         trailing: true,
-        eqnull: true,
-       },
-      globals: {
-        module: true,
-        require: true,
-        done: true
-      }
+        eqnull: true
+       }
     }
   });
 
   // Load local tasks.
   grunt.loadTasks('tasks');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  // Default task.
-  grunt.registerTask('default', 'lint');
+  // Default task
+  grunt.registerTask('default', 'ghost');
 
 };

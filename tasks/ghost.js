@@ -20,33 +20,21 @@ module.exports = function (grunt) {
         // Create array that will contain all the parameters for CasperJS
         command = ['test'].concat(filepaths);
 
-    // If there are no options set options to an empty object
-    if (typeof options === 'undefined') {
-      options = {};
-    }
-
     // Get CasperJS test options and add them to command array
-    if (options.xunit) {
-      command.push('--xunit=' + options.xunit);
-    }
-    if (options.direct) {
-      command.push('--direct');
-    }
-    if (options.includes) {
-      command.push('--includes=' + options.includes.join());
-    }
-    if (options.logLevel) {
-      command.push('--log-level=' + options.logLevel);
-    }
-    if (options.pre) {
-      command.push('--pre=' + options.pre.join());
-    }
-    if (options.post) {
-      command.push('--post=' + options.post.join());
-    }
-    if (options.failFast) {
-      command.push('--fail-fast');
-    }
+    if (options.xunit) command.push('--xunit=' + options.xunit);
+
+    if (options.direct) command.push('--direct');
+
+    if (options.includes) command.push('--includes=' + options.includes.join());
+
+    if (options.logLevel) command.push('--log-level=' + options.logLevel);
+
+    if (options.pre) command.push('--pre=' + options.pre.join());
+
+    if (options.post) command.push('--post=' + options.post.join());
+
+    if (options.failFast) command.push('--fail-fast');
+
     if (options.args) {
       var args = options.args;
       for (var a in args) {
@@ -74,7 +62,7 @@ module.exports = function (grunt) {
     // Prints command sent to CasperJS
     if (options.printCommand) {
       wrap('\u001b[1m\u001b[4mCommand:\u001b[0m casperjs ' +
-          command.join(' ') + ' \n');
+	command.join(' ') + ' \n');
     }
 
     // Prints filepaths sent to CasperJS in alternating colors
