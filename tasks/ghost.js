@@ -98,8 +98,8 @@ module.exports = function (grunt) {
     grunt.util.spawn({
       cmd: 'casperjs',
       args: command
-    }, function (error, result, code) {
-      grunt.log.writeln(result.stdout);
+    }, function (error, result) {
+      grunt.log.write(result.stdout);
       if (error) {
         grunt.fail.fatal();
       }
