@@ -87,7 +87,7 @@ module.exports = function (grunt) {
       cmd: 'casperjs',
       args: command
     }, function (error, result) {
-      grunt.log.write(result.stdout);
+      grunt.log.writeln(result.stdout);
       if (error) {
         grunt.fail.fatal();
       }
