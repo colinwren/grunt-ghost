@@ -18,9 +18,7 @@ module.exports = function (grunt) {
         // Get filepaths from 'src' and sorts alphabetically
         filepaths = this.data.filesSrc.sort(),
         // Create array that will contain all the parameters for CasperJS
-        command = ['test'].concat(filepaths),
-        // Get spawn function for the CasperJS process creation
-        spawn = require('child_process').spawn;
+        command = ['test'].concat(filepaths);
 
     // If there are no options set options to an empty object
     if (typeof options === 'undefined') {
@@ -97,25 +95,14 @@ module.exports = function (grunt) {
       wrap('\u001b[1m\u001b[4mTesting:\u001b[0m\u001b[1m ' + files + '\n');
     }
 
-    // Create CasperJS process
-    var cspr = spawn('casperjs', command);
-    cspr.stdout.setEncoding('utf8');
-    // On receiving output from CasperJS, print it line by line
-    cspr.stdout.on('data', function (data) {
-      var lines = data.toString().split(/(\e?\n)/g);
-      for (var j = 0; j < lines.length; j++) {
-        grunt.log.write(lines[j]);
+    grunt.util.spawn({
+      cmd: 'casperjs',
+      args: command
+    }, function (error, result, code) {
+      grunt.log.writeln(result.stdout);
+      if (error) {
+        grunt.fail.fatal();
       }
-    });
-
-    // Captures errors from CasperJS and prints them
-    cspr.stderr.on('data', function (data) {
-      grunt.log.error(data);
-      done();
-    });
-
-    // On completion print message
-    cspr.on('exit', function () {
       done();
     });
   });
