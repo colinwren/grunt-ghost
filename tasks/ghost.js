@@ -16,7 +16,10 @@ module.exports = function (grunt) {
         // "done()" is called
         done = this.async(),
         // Get filepaths from 'src' and sorts alphabetically
-        filepaths = this.data.filesSrc.sort(),
+        filepaths = [].concat(
+          (this.data.filesSrc || []),
+          (this.files || []).map(function (file) { return file.src; })
+        ).sort(),
         // Create array that will contain all the parameters for CasperJS
         command = ['test'].concat(filepaths);
 
