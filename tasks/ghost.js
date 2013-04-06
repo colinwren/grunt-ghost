@@ -65,7 +65,7 @@ module.exports = function (grunt) {
     // Prints command sent to CasperJS
     if (options.printCommand) {
       wrap('\u001b[1m\u001b[4mCommand:\u001b[0m casperjs ' +
-	command.join(' ') + ' \n');
+           command.join(' ') + ' \n');
     }
 
     // Prints filepaths sent to CasperJS in alternating colors
@@ -90,10 +90,10 @@ module.exports = function (grunt) {
       cmd: 'casperjs',
       args: command
     }, function (error, result) {
-      grunt.log.writeln(result.stdout);
       if (error) {
-        grunt.fail.fatal();
+        grunt.fail.fatal(result.stdout);
       }
+      grunt.log.writeln(result.stdout);
       done();
     });
   });
