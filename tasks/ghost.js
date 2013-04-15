@@ -91,7 +91,10 @@ module.exports = function (grunt) {
 
     grunt.util.spawn({
       cmd: 'casperjs',
-      args: command
+      args: command,
+      opts: {
+        stdio: 'inherit'
+      }
     }, function (error, result) {
       if (error) {
         grunt.fail.fatal(result.stdout);
