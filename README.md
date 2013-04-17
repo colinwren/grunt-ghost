@@ -66,6 +66,9 @@ ghost: {
       printCommand: true,
       // Prints list of filepaths
       printFilePaths: true
+      // choose a custom runner (default is test)
+      // see http://casperjs.org/testing.html#casper-test-command
+      runner: 'tests/customRunner.js'
     }
   }
 }

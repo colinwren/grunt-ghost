@@ -23,8 +23,10 @@ module.exports = function (grunt) {
             return memo;
           }, [])
         ).sort(),
+        // custom runner ?
+        runner = options.runner || 'test',
         // Create array that will contain all the parameters for CasperJS
-        command = ['test'].concat(filepaths);
+        command = [runner].concat(filepaths);
 
     // Get CasperJS test options and add them to command array
     if (options.xunit) command.push('--xunit=' + options.xunit);
