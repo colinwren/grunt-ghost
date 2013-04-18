@@ -23,7 +23,7 @@ module.exports = function (grunt) {
             return memo;
           }, [])
         ).sort(),
-        // custom runner ?
+        // Use the default test runner unless the user specified a custom one
         runner = options.runner || 'test',
         // Create array that will contain all the parameters for CasperJS
         command = [runner].concat(filepaths);

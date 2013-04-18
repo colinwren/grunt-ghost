@@ -61,14 +61,13 @@ ghost: {
       post: ['tests/post-test.js'],
       // Terminates test suite upon failure of first test
       failFast: true,
+      // Specify a custom test runner
+      runner: 'tests/customRunner.js'
       // grunt-ghost specific options
       // Prints the command given to CasperJS
       printCommand: true,
       // Prints list of filepaths
       printFilePaths: true
-      // choose a custom runner (default is test)
-      // see http://casperjs.org/testing.html#casper-test-command
-      runner: 'tests/customRunner.js'
     }
   }
 }
