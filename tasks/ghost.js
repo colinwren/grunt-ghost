@@ -17,11 +17,7 @@ module.exports = function (grunt) {
         done = this.async(),
         // Get filepaths from 'src' and sorts alphabetically
         filepaths = [].concat(
-          (this.data.filesSrc || []),
-          (this.files || []).reduce(function (memo, pair) {
-            memo.push.apply(memo, pair.src);
-            return memo;
-          }, [])
+          grunt.file.expand(this.data.filesSrc)
         ).sort(),
         // Use the default test runner unless the user specified a custom one
         runner = options.runner || 'test',
