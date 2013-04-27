@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     ghost: {
       dist: {
-        filesSrc: ['test/googleTest.js']
+        filesSrc: ['test/*.js']
       }
     },
     jshint: {
