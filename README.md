@@ -86,3 +86,4 @@ Licensed under the MIT license.
 ## Release History
 
  * 2013-04-14   v1.0.11   Enabled streaming output
+ * 2013-04-26   v1.0.12   Fixed glob filematching
