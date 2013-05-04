@@ -1,4 +1,4 @@
-# grunt-ghost
+# grunt-ghost [![Build Status](https://travis-ci.org/colinwren/grunt-ghost.png?branch=master)](https://travis-ci.org/colinwren/grunt-ghost)
 
 [Grunt](http://gruntjs.com/) task to run [CasperJS](http://casperjs.org/) tests.
 
