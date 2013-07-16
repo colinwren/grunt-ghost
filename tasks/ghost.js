@@ -66,7 +66,7 @@ module.exports = function (grunt) {
     // Prints command sent to CasperJS
     if (options.printCommand) {
       wrap('\u001b[1m\u001b[4mCommand:\u001b[0m casperjs ' +
-           command.join(' ') + ' \n');
+           command.join(' '));
     }
 
     // Prints filepaths sent to CasperJS in alternating colors
