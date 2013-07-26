@@ -81,9 +81,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 Copyright (c) 2013 Colin Wren
-Licensed under the MIT license. 
+Licensed under the MIT license.
 
 ## Release History
 
- * 2013-04-14   v1.0.11   Enabled streaming output
- * 2013-04-26   v1.0.12   Fixed glob filematching
+ * v1.0.13   Fixed Fix printCommand infinite loop bug
+ * v1.0.12   Fixed glob filematching
+ * v1.0.11   Enabled streaming output
