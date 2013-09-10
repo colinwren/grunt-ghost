@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 
     if (options.direct) command.push('--direct');
 
-    if (options.includes) command.push('--includes=' + options.includes.join());
+    if (options.includes) command.push('--includes=' + grunt.file.expand(options.includes).join());
 
     if (options.logLevel) command.push('--log-level=' + options.logLevel);
 
