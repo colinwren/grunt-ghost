@@ -50,7 +50,7 @@ ghost: {
       direct: true,
       // Sets logging level, check out http://casperjs.org/logging.html
       logLevel: 'info',
-      // Specifies files to be included for each test file
+      // Specifies files to be included for each test file, accepts file paths or globs as input
       includes: [
         'tests/config.js',
         'lib/jquery.min.js'
