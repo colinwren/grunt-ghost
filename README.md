@@ -1,5 +1,5 @@
 # grunt-ghost 
-# I no longer use or maintain this plugin. Let me know if you are interested in maintaining this project. 
+# I no longer use or maintain this project. Let me know if you are interested in maintaining this project. 
 [![Build Status](https://travis-ci.org/colinwren/grunt-ghost.png?branch=master)](https://travis-ci.org/colinwren/grunt-ghost)
 
 [Grunt](http://gruntjs.com/) task to run [CasperJS](http://casperjs.org/) tests.
@@ -87,6 +87,7 @@ Licensed under the MIT license.
 
 ## Release History
 
+ * v1.1.0    Add globbing pattern support for options.includes
  * v1.0.13   Fixed Fix printCommand infinite loop bug
  * v1.0.12   Fixed glob filematching
  * v1.0.11   Enabled streaming output
